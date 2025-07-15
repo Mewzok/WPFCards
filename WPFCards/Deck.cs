@@ -3,7 +3,6 @@
 namespace WPFCards {
     public class Deck {
         private List<Card> cards;
-        private Random rand = new Random();
 
         public Deck() {
             Reset();
