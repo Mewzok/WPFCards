@@ -1,9 +1,7 @@
 ﻿using System.Security.Cryptography;
 
-namespace WPFCards
-{
-    public class Deck
-    {
+namespace WPFCards {
+    public class Deck {
         private List<Card> cards;
         private Random rand = new Random();
 
@@ -11,22 +9,17 @@ namespace WPFCards
             Reset();
         }
 
-        public void Reset()
-        {
+        public void Reset() {
             cards = new List<Card>();
-            foreach (Card.Suit suit in Enum.GetValues(typeof(Card.Suit)))
-            {
-                foreach (Card.Rank rank in Enum.GetValues(typeof(Card.Rank)))
-                {
+            foreach (Card.Suit suit in Enum.GetValues(typeof(Card.Suit))) {
+                foreach (Card.Rank rank in Enum.GetValues(typeof(Card.Rank))) {
                     cards.Add(new Card(suit, rank));
                 }
             }
         }
 
-        public void Shuffle()
-        {
-            for(int i = cards.Count - 1; i > 0; i--)
-            {
+        public void Shuffle() {
+            for(int i = cards.Count - 1; i > 0; i--) {
                 int j = RandomNumberGenerator.GetInt32(0, i + 1);
                 Card temp = cards[i];
                 cards[i] = cards[j];
