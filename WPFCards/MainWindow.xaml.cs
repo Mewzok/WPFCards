@@ -32,7 +32,7 @@ namespace WPFCards {
         private void Draw_Click(object sender, RoutedEventArgs e) {
             // check for valid number input
             if(!int.TryParse(DrawNumberField.Text, out int num) || num < 0) {
-                num = 1;
+                num = 0;
             }
 
             var drawn = deck.Draw(num);
